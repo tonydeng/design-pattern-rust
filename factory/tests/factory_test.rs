@@ -8,10 +8,14 @@ mod tests {
 
     #[test]
     fn it_works() {
-        assert_eq!(3,add_one(2));
+        assert_eq!(3, add_one(2));
     }
 }
 
+
+//fn create_product_a() {
+//    let factory_a = ConcreateProductX();
+//}
 
 // fn create_product_a() {
 //     let factory_a = create_factory(FactoryID::A);

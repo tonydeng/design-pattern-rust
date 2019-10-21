@@ -3,7 +3,7 @@
 */
 trait AbstractFactory<'a> {
     fn create_product_x(&self) -> Box<ProductX + 'a>;
-    fn create_Product_y(&self) -> Box<ProductY + 'a>;
+    fn create_product_y(&self) -> Box<ProductY + 'a>;
 }
 
 
@@ -64,7 +64,6 @@ impl<'a> AbstractFactory<'a> for ConcreateFactoryB {
     }
 }
 
-#[derive(Debug)]
 enum FactoryID {
     A,
     B,
@@ -72,7 +71,7 @@ enum FactoryID {
 
 fn create_factory<'a>(id: FactoryID) -> Box<AbstractFactory<'a> + 'a> {
     match id {
-        FactoryID::A => Box::new(ConcreateFactoryA)
-        FactoryID::B => Box::new(ConcreateFactoryB)
+        FactoryID::A => Box::new(ConcreateFactoryA),
+        FactoryID::B => Box::new(ConcreateFactoryB),
     }
 }
